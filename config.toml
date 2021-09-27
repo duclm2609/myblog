@@ -5,3 +5,4 @@ theme = "terminal"
 [params]
 fullWidthTheme = false
 centerTheme = true
+showMenuItems = 2
