@@ -1,0 +1,7 @@
+baseURL = 'https://duclm.dev/'
+languageCode = 'en-us'
+title = "duclm's blog"
+theme = "terminal"
+[params]
+fullWidthTheme = false
+centerTheme = true
