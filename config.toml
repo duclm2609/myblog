@@ -1,4 +1,4 @@
-baseURL = 'https://duclm.dev/'
+baseURL = 'https://duclm2609.github.io/myblog/'
 languageCode = 'en-us'
 title = "duclm's blog"
 theme = "terminal"
@@ -7,14 +7,15 @@ fullWidthTheme = false
 centerTheme = true
 [menu]
 [[menu.main]]
-identifier = 'about'
-name = 'about hugo'
-pre = "<i class='fa fa-heart'></i>"
-url = '/about/'
+name = 'Blog'
+pre = "<i class='fa fa-road'></i>"
+url = '/posts'
 weight = -110
 [[menu.main]]
-name = 'getting started'
-post = "<span class='alert'>New!</span>"
-pre = "<i class='fa fa-road'></i>"
-url = '/getting-started/'
+identifier = 'about'
+name = 'About'
+pre = "<i class='fa fa-heart'></i>"
+url = '/about'
 weight = -100
+[params.Logo]
+logoText = "Le Minh Duc"
