@@ -2,6 +2,8 @@ baseURL = 'https://www.duclm.dev'
 languageCode = 'en-us'
 title = "duclm's blog"
 theme = "terminal"
+#discuss comments
+disqusShortname = 'duclm-dev'
 [params]
 fullWidthTheme = false
 centerTheme = true
