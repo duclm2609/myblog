@@ -4,12 +4,17 @@ title = "duclm's blog"
 theme = "terminal"
 #discuss comments
 disqusShortname = 'duclm-dev'
+
+[languages]
+[languages.en]
+copyright = "Le Minh Duc. All rights reserved."
+
 [params]
 fullWidthTheme = false
 centerTheme = true
 [menu]
 [[menu.main]]
-name = 'Blog'
+name = 'Home'
 pre = "<i class='fa fa-road'></i>"
 url = '/posts'
 weight = -110
@@ -21,3 +26,5 @@ url = '/about'
 weight = -100
 [params.Logo]
 logoText = "Le Minh Duc"
+[params.footer]
+copyright = "This is copyright"
