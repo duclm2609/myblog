@@ -1,12 +1,12 @@
 <!doctype html><html lang=en>
 <head>
-<title>Data Engineers of Netflix — Interview with Kevin Wylie :: duclm's blog</title>
+<title>Viper - Go configuration with fangs :: duclm's blog</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="This post is part of our “Data Engineers of Netflix” series, where our very own data engineers talk about their journeys to Data Engineering @ Netflix.">
-<meta name=keywords content="hello,world">
+<meta name=description content="Viper is a complete configuration solution for Go applications including 12-Factor apps. It is designed to work within an application, and can handle all types of configuration needs and formats.">
+<meta name=keywords content="go,golang">
 <meta name=robots content="noodp">
-<link rel=canonical href=https://www.duclm.dev/posts/hello/>
+<link rel=canonical href=https://www.duclm.dev/posts/other/>
 <link rel=stylesheet href=https://www.duclm.dev/assets/style.css>
 <link rel=stylesheet href=assets/%25!s%28%3cnil%3e%29.css>
 <link rel=apple-touch-icon href=https://www.duclm.dev/img/apple-touch-icon-192x192.png>
@@ -14,9 +14,9 @@
 <meta name=twitter:card content="summary">
 <meta property="og:locale" content="en">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data Engineers of Netflix — Interview with Kevin Wylie">
-<meta property="og:description" content="This post is part of our “Data Engineers of Netflix” series, where our very own data engineers talk about their journeys to Data Engineering @ Netflix.">
-<meta property="og:url" content="https://www.duclm.dev/posts/hello/">
+<meta property="og:title" content="Viper - Go configuration with fangs">
+<meta property="og:description" content="Viper is a complete configuration solution for Go applications including 12-Factor apps. It is designed to work within an application, and can handle all types of configuration needs and formats.">
+<meta property="og:url" content="https://www.duclm.dev/posts/other/">
 <meta property="og:site_name" content="duclm's blog">
 <meta property="og:image" content="https://www.duclm.dev">
 <meta property="og:image:width" content="2048">
@@ -50,7 +50,7 @@ Le Minh Duc
 <div class=content>
 <div class=post>
 <h1 class=post-title>
-<a href=https://www.duclm.dev/posts/hello/>Data Engineers of Netflix — Interview with Kevin Wylie</a></h1>
+<a href=https://www.duclm.dev/posts/other/>Viper - Go configuration with fangs</a></h1>
 <div class=post-meta>
 <span class=post-date>
 2021-09-27
@@ -58,12 +58,33 @@ Le Minh Duc
 <span class=post-author>:: duclm</span>
 </div>
 <span class=post-tags>
-#<a href=https://www.duclm.dev/tags/hello/>hello</a>&nbsp;
-#<a href=https://www.duclm.dev/tags/world/>world</a>&nbsp;
+#<a href=https://www.duclm.dev/tags/golang/>golang</a>&nbsp;
 </span>
 <div class=post-content><div>
 <p>Kevin Wylie is a Data Engineer on the Content Data Science and Engineering team. In this post, Kevin talks about his extensive experience in content analytics at Netflix since joining more than 10 years ago.
 Kevin grew up in the Washington, DC area, and received his undergraduate degree in Mathematics from Virginia Tech. Before joining Netflix, he worked at MySpace, helping implement page categorization, pathing analysis, sessionization, and more. In his free time he enjoys gardening and playing sports with his 4 kids.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+
+<span style=color:#f92672>import</span> (
+	<span style=color:#e6db74>&#34;flag&#34;</span>
+	<span style=color:#e6db74>&#34;github.com/spf13/pflag&#34;</span>
+)
+
+<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
+
+	<span style=color:#75715e>// using standard library &#34;flag&#34; package
+</span><span style=color:#75715e></span>	<span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>Int</span>(<span style=color:#e6db74>&#34;flagname&#34;</span>, <span style=color:#ae81ff>1234</span>, <span style=color:#e6db74>&#34;help message for flagname&#34;</span>)
+
+	<span style=color:#a6e22e>pflag</span>.<span style=color:#a6e22e>CommandLine</span>.<span style=color:#a6e22e>AddGoFlagSet</span>(<span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>CommandLine</span>)
+	<span style=color:#a6e22e>pflag</span>.<span style=color:#a6e22e>Parse</span>()
+	<span style=color:#a6e22e>viper</span>.<span style=color:#a6e22e>BindPFlags</span>(<span style=color:#a6e22e>pflag</span>.<span style=color:#a6e22e>CommandLine</span>)
+
+	<span style=color:#a6e22e>i</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>viper</span>.<span style=color:#a6e22e>GetInt</span>(<span style=color:#e6db74>&#34;flagname&#34;</span>) <span style=color:#75715e>// retrieve value from viper
+</span><span style=color:#75715e></span>
+	<span style=color:#75715e>// ...
+</span><span style=color:#75715e></span>}
+
+</code></pre></div>
 </div></div>
 <div id=disqus_thread></div>
 <script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//duclm-dev.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
